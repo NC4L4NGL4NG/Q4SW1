@@ -1,0 +1,92 @@
+    body {
+       font-family: "Libre Baskerville", serif;
+  font-weight: 400;
+  font-style: normal;
+   background-image: url(https://img.freepik.com/premium-vector/abstract-medical-background-with-flat-icons-symbols-concepts-ideas-healthcare-technology-innovation-medicine-health-science-research_120542-327.jpg) ;
+      text-align:center;
+      background-side:cover;
+      background-position:center;
+    }
+    .container {
+background: linear-gradient(135deg, rgba(121,247,255,1) 0%, rgba(147,69,255,1) 2%, rgba(105,230,255,1) 30%, rgba(54,23,255,1) 100%);
+      border-radius: 20px;
+      margin: 2rem auto;
+      padding: 2rem;
+      width: 80%;
+      max-width: 700px;
+      display: flex;
+      flex-direction: row;
+      gap: 2rem;
+    }
+    .left {
+      flex: 1;
+      text-align: center;
+    }
+    .left img {
+      width: 320px;
+      height: 250px;
+    }
+
+    .right {
+      flex: 2;
+    }
+    h1 {
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+    }
+    p {
+      font-size: 0.9rem;
+    }
+    .input-group {
+      margin-bottom: 1rem;
+    }
+    input {
+      padding: 0.5rem;
+      width: 100%;
+      font-size: 1rem;
+      margin-top: 0.2rem;
+    }
+    button {
+      padding: 0.5rem 1rem;
+      background-color: #ffc107;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 0.5rem;
+    }
+    .output {
+      background: #1a1a1a;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 1rem;
+      border-radius: 10px;
+      font-size: 1.2rem;
+    }
+    .table-container {
+      margin: 2rem auto;
+      width: 80%;
+      max-width: 500px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      padding: 0.8rem;
+      border: 1px solid #aaa;
+      text-align: center;
+    }
+    th {
+      background-color: #444;
+      color: white;
+    }
+    td {
+      background-color: #eee;
+    }
+    footer {
+      text-align: center;
+      font-size: 0.8rem;
+      margin-top: 1rem;
+      color: #555;
+    }

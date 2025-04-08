@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BMI Calculator</title>
+  <style>
+    body {
+       font-family: "Libre Baskerville", serif;
+  font-weight: 400;
+  font-style: normal;
+   background-image: url(https://img.freepik.com/premium-vector/abstract-medical-background-with-flat-icons-symbols-concepts-ideas-healthcare-technology-innovation-medicine-health-science-research_120542-327.jpg) ;
+      text-align:center;
+      background-side:cover;
+      background-position:center;
+    }
+    .container {
+background: linear-gradient(135deg, rgba(121,247,255,1) 0%, rgba(147,69,255,1) 2%, rgba(105,230,255,1) 30%, rgba(54,23,255,1) 100%);
+      border-radius: 20px;
+      margin: 2rem auto;
+      padding: 2rem;
+      width: 80%;
+      max-width: 700px;
+      display: flex;
+      flex-direction: row;
+      gap: 2rem;
+    }
+    .left {
+      flex: 1;
+      text-align: center;
+    }
+    .left img {
+      width: 320px;
+      height: 250px;
+    }
+
+    .right {
+      flex: 2;
+    }
+    h1 {
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+    }
+    p {
+      font-size: 0.9rem;
+    }
+    .input-group {
+      margin-bottom: 1rem;
+    }
+    input {
+      padding: 0.5rem;
+      width: 100%;
+      font-size: 1rem;
+      margin-top: 0.2rem;
+    }
+    button {
+      padding: 0.5rem 1rem;
+      background-color: #ffc107;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 0.5rem;
+    }
+    .output {
+      background: #1a1a1a;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 1rem;
+      border-radius: 10px;
+      font-size: 1.2rem;
+    }
+    .table-container {
+      margin: 2rem auto;
+      width: 80%;
+      max-width: 500px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      padding: 0.8rem;
+      border: 1px solid #aaa;
+      text-align: center;
+    }
+    th {
+      background-color: #444;
+      color: white;
+    }
+    td {
+      background-color: #eee;
+    }
+    footer {
+      text-align: center;
+      font-size: 0.8rem;
+      margin-top: 1rem;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <div class="left">
+    <img src="file:///C:/Users/Neriza/Downloads/meter.png" alt="BMI Meter">
+  </div>
+  <div class="right">
+    <h1>BMI Calculator</h1>
+    <p><strong>Body Mass Index (BMI)</strong> categories are standardized classifications used to assess weight status based on an individual's height and weight measured in kilograms per square meter (kg/m²).</p>
+    
+    <div class="input-group">
+      <label for="weight">Weight in kilogram</label>
+      <input type="number" id="weight" placeholder="kilogram" required />
+    </div>
+    
+    <div class="input-group">
+      <label for="height">Height in meter</label>
+      <input type="number" id="height" placeholder="meter" step="0.01" required />
+    </div>
+
+    <button onclick="calculateBMI()">Calculate BMI</button>
+    
+    <div id="result" class="output">Output</div>
+  </div>
+</div>
+
+<div class="table-container">
+  <table>
+    <thead>
+      <tr>
+        <th>Category</th>
+        <th>Range</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Underweight</td><td>&lt; 18.5</td></tr>
+      <tr><td>Normal weight</td><td>&ge; 18.5 and &le; 24.9</td></tr>
+      <tr><td>Overweight</td><td>&ge; 25 and &le; 29.9</td></tr>
+      <tr><td>Obese</td><td>&ge; 30</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="footer">
+    Source: <a href="https://my.clevelandclinic.org/health/articles/9464-body-mass-index-bmi" target="_blank">Clevel and Clinic</a><br>
+    ©Neriza Calanglang
+  </div>
+
+<script>
+  function calculateBMI() {
+    const weight = parseFloat(document.getElementById("weight").value);
+    const height = parseFloat(document.getElementById("height").value);
+    const result = document.getElementById("result");
+
+    if (!weight || !height || height === 0) {
+      result.textContent = "Please enter valid values.";
+      return;
+    }
+
+    const bmi = weight / (height * height);
+    let category = "";
+
+    if (bmi < 18.5) category = "Underweight";
+    else if (bmi >= 18.5 && bmi <= 24.9) category = "Normal weight";
+    else if (bmi >= 25 && bmi <= 29.9) category = "Overweight";
+    else if (bmi >= 30) category = "Obese";
+
+    result.textContent = `Your BMI is ${bmi.toFixed(2)} (${category})`;
+  }
+</script>
+
+</body>
+</html>
